@@ -10,17 +10,18 @@ import com.catalyst.grocerystores.navigation.destinations.Destination
 
 @Composable
 fun AuthenticationNavigationHost(
-    navController: NavHostController
+    navHostController: NavHostController
 ) {
-    NavHost(navController = navController,
+    NavHost(navController = navHostController,
     startDestination = Destination.LoginDestination.route
     ) {
         composable (route = Destination.LoginDestination.route) {
-            Login(navController = navController)
+            Login(navController = navHostController)
         }
         composable (route = Destination.SignUpDestination.route){
-            Register()
+            Register(navController = navHostController) //this is a form of polymorphism
         }
+        //for each screen..it is supposed to be here,whenever a person goes to the login route, render the login composable
     }
 
 }
