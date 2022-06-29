@@ -7,4 +7,5 @@ sealed class AuthEvent {
             ) : AuthEvent()
 
     object LoginSuccess : AuthEvent()
+    data class LoginFailure(val message: String) : AuthEvent()
 }

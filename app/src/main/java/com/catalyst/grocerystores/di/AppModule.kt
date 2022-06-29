@@ -1,5 +1,8 @@
 package com.catalyst.grocerystores.di
 
+import android.app.Application
+import androidx.room.Room
+import com.catalyst.grocerystores.data.local.GroceriesDatabase
 import com.catalyst.grocerystores.data.remote.Api
 import com.catalyst.grocerystores.data.repositories.UserRepositoryImpl
 import com.catalyst.grocerystores.domain.repositories.UserRepository
@@ -50,4 +53,16 @@ object AppModule {
             login = Login(userRepository = repository)
         )
     }
+
+    @Provides
+    @Singleton
+    fun provideGroceriesDatabase(app : Application) : GroceriesDatabase {
+        return Room.databaseBuilder(
+            app,
+            GroceriesDatabase::class.java,
+            GroceriesDatabase.DATABASE_NAME
+        )
+            .build()
+    }
+
 }

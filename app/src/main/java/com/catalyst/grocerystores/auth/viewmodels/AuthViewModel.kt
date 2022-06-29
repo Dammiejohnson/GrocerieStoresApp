@@ -44,15 +44,27 @@ class AuthViewModel @Inject constructor(private val authenticationUseCases: Auth
                 when(it)  {
                     is Resource.Loading -> {
                         _state.value = state.value.copy(
+                                isLoading = true,
+                                )
+                    }
+                    is Resource.Error -> {
+                        val message = it.message ?: "An unexpected error occurred"
+                        _state.value = state.value.copy(
                             isLoading = false,
                             errorOccured = true,
-                            errorMessage = it.message ?: "An unexpected error occurred"
+                            errorMessage = message
                         )
-                        //Todo(emit event)
+                      _eventFlow.emit(
+                          AuthEvent.LoginFailure(
+                              message = message
+                          )
+                      )
                     }
+
                     is Resource.Success -> {
                         _state.value = state.value.copy(
-                            isLoading = false
+                            isLoading = false,
+                            isAuthenticated = true
                         )
                         _eventFlow.emit(
                             AuthEvent.LoginSuccess
