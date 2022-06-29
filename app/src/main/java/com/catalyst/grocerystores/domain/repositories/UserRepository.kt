@@ -1,4 +1,4 @@
-package com.catalyst.grocerystores.domain
+package com.catalyst.grocerystores.domain.repositories
 
 import com.catalyst.grocerystores.data.remote.request.LoginRequest
 import com.catalyst.grocerystores.data.remote.response.LoginResponse

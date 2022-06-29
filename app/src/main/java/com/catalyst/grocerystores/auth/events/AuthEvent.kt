@@ -6,5 +6,5 @@ sealed class AuthEvent {
         val password: String
             ) : AuthEvent()
 
-    object LOginSuccess : AuthEvent()
+    object LoginSuccess : AuthEvent()
 }

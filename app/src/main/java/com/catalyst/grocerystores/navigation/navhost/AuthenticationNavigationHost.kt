@@ -6,17 +6,19 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import com.catalyst.grocerystores.auth.screens.Login
 import com.catalyst.grocerystores.auth.screens.Register
+import com.catalyst.grocerystores.auth.viewmodels.AuthViewModel
 import com.catalyst.grocerystores.navigation.destinations.Destination
 
 @Composable
 fun AuthenticationNavigationHost(
-    navHostController: NavHostController
+    navHostController: NavHostController,
+    authViewModel: AuthViewModel
 ) {
     NavHost(navController = navHostController,
     startDestination = Destination.LoginDestination.route
     ) {
         composable (route = Destination.LoginDestination.route) {
-            Login(navController = navHostController)
+            Login(navController = navHostController, authViewModel = authViewModel)
         }
         composable (route = Destination.SignUpDestination.route){
             Register(navController = navHostController) //this is a form of polymorphism

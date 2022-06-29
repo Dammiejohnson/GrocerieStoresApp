@@ -7,10 +7,14 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.hilt.navigation.compose.hiltViewModel
 import com.catalyst.grocerystores.auth.AuthenticationWrapper
+import com.catalyst.grocerystores.auth.viewmodels.AuthViewModel
 
 @Composable
-fun GroceriesSwitch(){
+fun GroceriesSwitch(
+    authViewModel: AuthViewModel = hiltViewModel()
+){
     val isAuthenticated = false
 
     if (isAuthenticated) {
@@ -23,6 +27,6 @@ fun GroceriesSwitch(){
 
         }
     } else {
-       AuthenticationWrapper()
+       AuthenticationWrapper(viewModel = authViewModel)
     }
 }

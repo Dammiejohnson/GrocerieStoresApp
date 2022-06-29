@@ -1,4 +1,4 @@
-package com.catalyst.grocerystores.general.util
+package com.catalyst.grocerystores.general.utils
 
 enum class InputType {
     TEXT,

@@ -2,8 +2,9 @@ package com.catalyst.grocerystores.di
 
 import com.catalyst.grocerystores.data.remote.Api
 import com.catalyst.grocerystores.data.repositories.UserRepositoryImpl
-import com.catalyst.grocerystores.domain.UserRepository
+import com.catalyst.grocerystores.domain.repositories.UserRepository
 import com.catalyst.grocerystores.domain.usecases.auth.AuthenticationUseCases
+import com.catalyst.grocerystores.domain.usecases.auth.Login
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

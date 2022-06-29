@@ -2,8 +2,8 @@ package com.catalyst.grocerystores.domain.usecases.auth
 
 import com.catalyst.grocerystores.data.remote.request.LoginRequest
 import com.catalyst.grocerystores.data.remote.response.LoginResponse
-import com.catalyst.grocerystores.domain.UserRepository
-import com.catalyst.grocerystores.general.util.Resource
+import com.catalyst.grocerystores.domain.repositories.UserRepository
+import com.catalyst.grocerystores.general.utils.Resource
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import retrofit2.HttpException

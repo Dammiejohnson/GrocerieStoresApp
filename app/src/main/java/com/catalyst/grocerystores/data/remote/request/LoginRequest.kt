@@ -1,3 +1,6 @@
 package com.catalyst.grocerystores.data.remote.request
 
-data class LoginRequest()
+data class LoginRequest(
+    val email: String,
+    val password: String
+)

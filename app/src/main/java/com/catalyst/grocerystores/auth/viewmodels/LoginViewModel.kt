@@ -5,8 +5,8 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 import com.catalyst.grocerystores.auth.events.LoginFormEvent
 import com.catalyst.grocerystores.auth.state.LoginFormState
-import com.catalyst.grocerystores.general.util.InputType
-import com.catalyst.grocerystores.general.util.Util
+import com.catalyst.grocerystores.general.utils.InputType
+import com.catalyst.grocerystores.general.utils.Util
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
@@ -62,9 +62,9 @@ class LoginViewModel @Inject constructor(): ViewModel() {
                                 formValid = false
                             )
                         }
+                    }
                 }
             }
         }
     }
-}
 }
